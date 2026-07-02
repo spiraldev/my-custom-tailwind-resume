@@ -47,7 +47,7 @@ const coldfusion = {
     },
     {
       group: "Modernization & Cloud",
-      items: ["Monolith-to-service migration", "ColdFusion → Node.js/AWS", "AWS Lambda", "API Gateway", "S3", "Serverless"],
+      items: ["Monolith-to-service migration", "ColdFusion → Node.js/AWS", "AWS Lambda", "AWS CDK", "API Gateway", "S3", "Serverless"],
     },
     {
       group: "Security & Domains",
@@ -62,7 +62,7 @@ const coldfusion = {
       location: "Remote",
       bullets: [
         "Founded and run a bootstrapped SaaS platform, personally owning ColdFusion and Node.js codebases in production for 15+ years — from data model to deployment.",
-        "Modernized legacy ColdFusion features into AWS-hosted Node.js services (Lambda, S3) while keeping paying customers live throughout the migration.",
+        "Migrated the platform from a ColdFusion monolith to AWS (infrastructure as code with CDK) — now a NestJS API, a public API, and a ReactJS UI — keeping paying customers live throughout.",
         "Built and maintain payments, recurring billing, forms, and member portals backed by SQL Server / PostgreSQL, processing over $2M in transactions across 50 clients.",
         "Provide ongoing production support and reliability engineering, sustaining 99.95% uptime for 100K+ users on long-lived code.",
       ],
@@ -173,7 +173,7 @@ const fullstack = {
     },
     {
       group: "Cloud & DevOps",
-      items: ["AWS Lambda", "API Gateway", "AppSync", "ECS", "S3", "CloudFront", "Docker", "GitHub Actions / CI/CD"],
+      items: ["AWS Lambda", "AWS CDK (IaC)", "API Gateway", "AppSync", "ECS", "S3", "CloudFront", "Docker", "GitHub Actions / CI/CD"],
     },
     {
       group: "Databases",
@@ -191,7 +191,7 @@ const fullstack = {
       dates: "2006 – Present",
       location: "Remote",
       bullets: [
-        "Design and operate an AWS-hosted SaaS platform end to end: TypeScript/Node.js services, React front ends, and PostgreSQL/MySQL data.",
+        "Design and operate an AWS SaaS platform (infrastructure as code with CDK) that grew from a ColdFusion monolith into a NestJS API, a public API, and a ReactJS UI over PostgreSQL/MySQL.",
         "Built a secure payments and recurring-billing system with JWT-based auth and reporting APIs, processing over $2M in transactions across 50 clients.",
         "Ship features solo through the full lifecycle — API design, front end, Docker packaging, and CI/CD to AWS (Lambda, S3, CloudFront).",
         "Own reliability and cost in production, sustaining 99.95% uptime for 100K+ users across live customer-facing services.",
@@ -282,7 +282,7 @@ const staff = {
     },
     {
       group: "Core Stack",
-      items: ["TypeScript / Node.js", "NestJS", "React / Angular", "ColdFusion (legacy)", "AWS (Lambda, AppSync, ECS, S3)"],
+      items: ["TypeScript / Node.js", "NestJS", "React / Angular", "ColdFusion (legacy)", "AWS (Lambda, AppSync, ECS, S3)", "AWS CDK (IaC)"],
     },
     {
       group: "Data",
@@ -297,7 +297,7 @@ const staff = {
       location: "Remote",
       bullets: [
         "Own the full technical and business stack of a SaaS company for 15+ years — architecture, delivery, and reliability — sustaining 99.95% uptime for 100K+ users.",
-        "Set and executed a modernization strategy migrating a ColdFusion platform to AWS-hosted Node.js services without customer disruption.",
+        "Set and executed a modernization strategy taking a ColdFusion platform to AWS (infrastructure as code with CDK) — now a NestJS API, a public API, and a ReactJS UI — without customer disruption.",
         "Designed the API platform behind payments, recurring billing, forms, member portals, and reporting — processing over $2M in transactions across 50 clients.",
         "Made pragmatic build/buy and architecture decisions balancing delivery speed, operational simplicity, and long-term maintainability.",
       ],
