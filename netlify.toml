@@ -1,0 +1,20 @@
+# Netlify build + hosting config
+[build]
+  command = "npm run build"
+  publish = "docs"
+
+# Clean, extensionless routes for each résumé version.
+[[redirects]]
+  from = "/coldfusion"
+  to = "/coldfusion.html"
+  status = 200
+
+[[redirects]]
+  from = "/full-stack"
+  to = "/full-stack.html"
+  status = 200
+
+[[redirects]]
+  from = "/staff-engineer"
+  to = "/staff-engineer.html"
+  status = 200

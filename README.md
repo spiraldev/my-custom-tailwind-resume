@@ -1,56 +1,58 @@
-Hope You Enjoyed My Resume!
----------
+Matt Graf — Résumé Site
+=======
 
-This custom resume was built with HTML, [Tailwind CSS](https://tailwindcss.com/), and the [Universal Résumé Template](https://github.com/WebPraktikos/universal-resume)
+Static, ATS-friendly résumé site with three targeted versions built from one
+shared data source. HTML + [Tailwind CSS](https://tailwindcss.com/).
 
-Check Out My Finished Resume
---------
-Hosted with Netlify & Mobile Responsive [Torey Littlefield - Resume](https://resume-torey-littlefield.netlify.app/)
+Live: https://resume-matt-graf.netlify.app/
 
-How to run it
----------
+Pages
+-----
 
-Navigate to the base directory:
+| Route | File | Focus |
+|-------|------|-------|
+| `/coldfusion` | `docs/coldfusion.html` | Senior ColdFusion / Legacy Modernization |
+| `/full-stack` | `docs/full-stack.html` | Senior Full Stack — Node.js, NestJS, React, TS |
+| `/staff-engineer` | `docs/staff-engineer.html` | Staff / Principal Engineer |
 
-```
-cd universal-resume
-```
+**There is no home page.** The root `/` returns a 404 — each résumé is only
+reachable by knowing its slug. Pages don't cross-link to each other either, so
+one URL doesn't reveal the others.
 
-Install the dependencies:
+Each page has its own SEO slug, `<title>`, and meta description, a print-friendly
+layout (**Print / Save PDF** button), semantic `h1`/`h2`/`h3`, and a single-column,
+mobile-readable, no-tables/no-icons layout for clean ATS parsing.
+
+How it works
+------------
+
+- `resume-data.js` — all content: shared identity + three tailored versions.
+  **Edit content here.**
+- `generate.js` — renders `docs/*.html` from that data. Do **not** hand-edit the
+  generated HTML; it is overwritten on every build.
+- Tailwind is compiled to `docs/build.css` (purged in production).
+
+Run locally
+-----------
 
 ```
 npm install
-```
-
-Start the development server:
-
-```
 npm run serve
 ```
 
-Only generate CSS that is used on the page which results in a much smaller file size:
+`serve` regenerates the pages, watches Tailwind, and opens a live-reload server.
 
-```
-npm run build
-```
+To only regenerate HTML:  `npm run generate`
+To build the purged production CSS:  `npm run build`
 
-Starting Point
----------
+Deploy to Netlify
+-----------------
 
-`docs/index.html` is the main content file. By copying HTML: add pages, sections, subsection, and other parts.
+Config is in `netlify.toml` (build command `npm run build`, publish dir `docs`,
+clean-URL redirects). Two options:
 
-`npm run build` will make the **docs** directory ready for drag-n-drop to, for example, https://app.netlify.com/drop (free registration required beforehand).
-
-Also, with additionally running `git add docs/styles.css -f` and committing changes, it’s ready for push to GitHub and integration with GitHub Pages. GitHub Pages are free for  public repositories. Under your repository name, not profile, click “Settings” and enable GitHub Pages by navigating to: `Options → GitHub Pages → Source → /docs`.
-
-Tailwind CSS
----------
-
-Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override. It has a great [documentation](https://tailwindcss.com/docs/installation).
-
-
-Build Your Own Resume
---------
-
-- Made With Universal Résumé Template
-- Credit To @webpraktikos For The Repo
+1. **Git integration (recommended):** connect the repo in Netlify. It runs
+   `npm run build` and publishes `docs/` on every push. `docs/build.css` is
+   gitignored and generated during the build — no need to commit it.
+2. **Manual drag-n-drop:** run `npm run build`, then drag the `docs/` folder to
+   https://app.netlify.com/drop.
