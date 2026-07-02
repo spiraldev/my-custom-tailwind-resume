@@ -64,7 +64,7 @@ const coldfusion = {
         "Founded and run a bootstrapped SaaS platform, personally owning ColdFusion and Node.js codebases in production for 15+ years — from data model to deployment.",
         "Modernized legacy ColdFusion features into AWS-hosted Node.js services (Lambda, S3) while keeping paying customers live throughout the migration.",
         "Built and maintain payments, recurring billing, forms, and member portals backed by SQL Server / PostgreSQL, processing over $2M in transactions across 50 clients.",
-        "Provide ongoing production support: debugging, refactoring, and hardening authentication and data workflows on long-lived code.",
+        "Provide ongoing production support and reliability engineering, sustaining 99.95% uptime for 100K+ users on long-lived code.",
       ],
     },
     {
@@ -84,7 +84,7 @@ const coldfusion = {
       dates: "2016 – 2021",
       location: "Hilton Head Island, SC",
       bullets: [
-        "Led modernization of a HIPAA-aware healthcare ColdFusion monolith into microservices using Node.js, NestJS, AWS Lambda, and AWS AppSync.",
+        "Led modernization of a HIPAA-aware healthcare ColdFusion monolith, extracting 12 microservices on Node.js, NestJS, AWS Lambda, and AWS AppSync.",
         "Migrated relational data across MSSQL, PostgreSQL, and MongoDB, preserving audit and reporting requirements for regulated Medicare data.",
         "Led a team of 8 engineers, owning production debugging and refactoring of legacy CFML and cutting recurring support incidents through targeted rewrites.",
         "Built REST/GraphQL APIs that let modern Angular dashboards consume data still served in part by the legacy system.",
@@ -96,7 +96,7 @@ const coldfusion = {
       dates: "2013 – 2016",
       location: "Frederick, MD",
       bullets: [
-        "Architected and built event-registration and attendee-workflow features on a ColdFusion + MSSQL platform serving live enterprise events.",
+        "Architected and built event-registration and attendee-workflow features on a ColdFusion + MSSQL platform serving live enterprise events totaling 300K+ attendees.",
         "Exposed REST APIs over legacy data so JavaScript (Backbone.js) front ends could deliver real-time attendee experiences.",
         "Debugged and stabilized production during high-load live events where downtime was not an option.",
       ],
@@ -194,7 +194,7 @@ const fullstack = {
         "Design and operate an AWS-hosted SaaS platform end to end: TypeScript/Node.js services, React front ends, and PostgreSQL/MySQL data.",
         "Built a secure payments and recurring-billing system with JWT-based auth and reporting APIs, processing over $2M in transactions across 50 clients.",
         "Ship features solo through the full lifecycle — API design, front end, Docker packaging, and CI/CD to AWS (Lambda, S3, CloudFront).",
-        "Own reliability and cost in production: monitoring, refactoring, and incremental re-architecture of live customer-facing services.",
+        "Own reliability and cost in production, sustaining 99.95% uptime for 100K+ users across live customer-facing services.",
       ],
     },
     {
@@ -214,7 +214,7 @@ const fullstack = {
       dates: "2016 – 2021",
       location: "Hilton Head Island, SC",
       bullets: [
-        "Led migration of a healthcare monolith to a microservice architecture on Node.js, NestJS, AWS Lambda, and AWS AppSync (GraphQL).",
+        "Led migration of a healthcare monolith to a microservice architecture, extracting 12 services on Node.js, NestJS, AWS Lambda, and AWS AppSync (GraphQL).",
         "Built REST and GraphQL APIs backed by PostgreSQL, MSSQL, and MongoDB, with JWT/OAuth-style authentication.",
         "Delivered Angular dashboards against the new API layer and mentored a team of 8 engineers on TypeScript and testing practices.",
         "Introduced Jest test coverage and CI to raise reliability across newly extracted services.",
@@ -227,7 +227,7 @@ const fullstack = {
       location: "Frederick, MD",
       bullets: [
         "Built a scalable event-registration platform with JavaScript, Backbone.js, REST APIs, and SQL Server.",
-        "Developed real-time attendee and event workflows for live, high-attendance conferences.",
+        "Developed real-time attendee and event workflows for live conferences totaling 300K+ attendees.",
         "Recruited, trained, and led developers while shipping features under tight event deadlines.",
       ],
     },
@@ -296,7 +296,7 @@ const staff = {
       dates: "2006 – Present",
       location: "Remote",
       bullets: [
-        "Own the full technical and business stack of a SaaS company: architecture, roadmap, delivery, reliability, and cost — for 15+ years in production.",
+        "Own the full technical and business stack of a SaaS company for 15+ years — architecture, delivery, and reliability — sustaining 99.95% uptime for 100K+ users.",
         "Set and executed a modernization strategy migrating a ColdFusion platform to AWS-hosted Node.js services without customer disruption.",
         "Designed the API platform behind payments, recurring billing, forms, member portals, and reporting — processing over $2M in transactions across 50 clients.",
         "Made pragmatic build/buy and architecture decisions balancing delivery speed, operational simplicity, and long-term maintainability.",
@@ -308,7 +308,7 @@ const staff = {
       dates: "2016 – 2021",
       location: "Hilton Head Island, SC",
       bullets: [
-        "Led the architecture and execution of a healthcare monolith-to-microservices migration on Node.js, NestJS, AWS Lambda, and AppSync.",
+        "Led the architecture and execution of a healthcare monolith-to-microservices migration, extracting 12 services on Node.js, NestJS, AWS Lambda, and AppSync.",
         "Defined the API and data strategy across MSSQL, PostgreSQL, and MongoDB for HIPAA-aware, audit-sensitive workloads.",
         "Led a team of 8 engineers, setting standards for testing, code quality, and incremental delivery during a multi-year modernization.",
         "Partnered with product and business stakeholders to sequence the migration around risk and business priorities.",
@@ -330,7 +330,7 @@ const staff = {
       dates: "2013 – 2016",
       location: "Frederick, MD",
       bullets: [
-        "Architected a scalable event-registration platform and led developers delivering it under live-event deadlines.",
+        "Architected a scalable event-registration platform serving 300K+ attendees and led developers delivering it under live-event deadlines.",
         "Recruited, hired, trained, and led staff, owning technical direction for attendee and event workflows.",
       ],
     },
