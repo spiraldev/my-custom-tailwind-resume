@@ -31,6 +31,7 @@ function head(title, description) {
   <meta name="description" content="${esc(description)}" />
   <meta name="keywords" content="resume,cv,Matt Graf,software engineer" />
   <meta name="author" content="Matt Graf" />
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="./build.css" rel="stylesheet" />
