@@ -70,7 +70,7 @@ const coldfusion = {
     {
       company: "Xenegrade",
       role: "Senior Software Engineer",
-      dates: "2021 – 2023",
+      dates: "2021 – Present",
       location: "Remote",
       bullets: [
         "Modernized a ColdFusion student/registration platform, extracting business logic into Node.js and AWS Lambda services behind REST APIs.",
@@ -200,7 +200,7 @@ const fullstack = {
     {
       company: "Xenegrade",
       role: "Senior Software Engineer",
-      dates: "2021 – 2023",
+      dates: "2021 – Present",
       location: "Remote",
       bullets: [
         "Built Node.js and AWS Lambda services behind REST APIs, replacing legacy pages with modern, testable TypeScript code.",
@@ -317,7 +317,7 @@ const staff = {
     {
       company: "Xenegrade",
       role: "Senior Software Engineer",
-      dates: "2021 – 2023",
+      dates: "2021 – Present",
       location: "Remote",
       bullets: [
         "Drove incremental re-platforming of a legacy application onto Node.js and AWS serverless services.",
