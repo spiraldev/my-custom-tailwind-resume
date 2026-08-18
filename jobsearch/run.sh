@@ -18,9 +18,17 @@ cd "$REPO" || exit 1
 
 {
   echo "=== job scan start $(date) ==="
+
+  # 1. Fetch the listings first. Real (headed) Chrome — do NOT add --headless,
+  #    Indeed serves a block page to headless and the whole board is lost.
+  echo "--- fetch $(date) ---"
+  node "$REPO/jobsearch/fetch-jobs.js" --out "$REPO/jobsearch/state/candidates.json"
+  echo "--- fetch done (exit $?) ---"
+
+  # 2. Score, report, log to Notion, and Slack-DM the top 5.
   "$CLAUDE" -p "$(cat "$REPO/jobsearch/DAILY_JOB_SEARCH.md")" \
     --permission-mode acceptEdits \
-    --allowed-tools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch,mcp__claude_ai_Indeed__search_jobs,mcp__claude_ai_Indeed__get_job_details,mcp__claude_ai_Slack__slack_send_message"
+    --allowed-tools "Read,Write,Edit,Glob,Grep,Bash,mcp__claude_ai_Slack__slack_send_message,mcp__claude_ai_Notion__notion-create-pages"
   echo "=== job scan end   $(date) (exit $?) ==="
 } >> "$LOG_DIR/$STAMP.log" 2>&1
 
