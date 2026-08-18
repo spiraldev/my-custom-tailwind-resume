@@ -125,8 +125,16 @@ Gap: <one line, or "none material">
 Résumé: <coldfusion | full-stack | staff-engineer>
 Tailor: <paste-ready prompt — see below>
 Posting: <apply url>
+Find: <search url — see below>
 Notion row: <url returned by notion-create-pages for this job>
 ```
+
+**The `Find:` line** is the reliable link. Board deep links rot — Dice `/job-detail/`
+URLs are login-gated (a logged-out browser gets "doesn't exist"), and Indeed `rc/clk`
+links are session-tokened. So always include a search link that resolves for anyone:
+`https://www.google.com/search?q=` + URL-encoded `"<Title>" <Company> <board>`. Put this
+same `Find` URL in the Notion row body too, labelled **Find**, alongside the raw posting.
+Keep `Posting:` as the direct link for when he's already signed in to the board.
 
 If nothing cleared 80, send one message: `No 80%+ matches today — scanned <N>.`
 
