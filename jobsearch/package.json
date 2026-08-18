@@ -1,0 +1,10 @@
+{
+  "name": "jobsearch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Daily remote-job scan helpers for the resume repo. Playwright-driven board fetchers.",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

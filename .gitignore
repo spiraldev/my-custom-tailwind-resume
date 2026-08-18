@@ -3,3 +3,9 @@
 /node_modules/
 /docs/build.css
 /tmp/
+
+# job search runtime state
+/jobsearch/node_modules/
+/jobsearch/state/
+/jobsearch/reports/
+/jobsearch/logs/
