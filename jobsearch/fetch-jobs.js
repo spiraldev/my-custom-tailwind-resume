@@ -91,6 +91,55 @@ function needsClearance(text) {
   return CLEARANCE_REJECT.test(text || "");
 }
 
+/* Postings older than this (in days) are dropped before scoring. Dice/Indeed
+   often show a fresh "updated Nh ago" over a months-old post; we parse the
+   original age, not the update. */
+const MAX_AGE_DAYS = 30;
+
+/* Best-effort age in days from a board's freeform "posted" string. Returns null
+   when the format can't be read — callers must KEEP on null, never drop on a
+   guess. The deceptive "(updated 3h ago)" suffix is stripped first so a stale
+   post can't masquerade as fresh. */
+function postedAgeDays(posted, now = new Date()) {
+  if (!posted) return null;
+  let s = String(posted).toLowerCase().replace(/\([^)]*\)/g, " ").trim();
+  if (!s) return null;
+
+  // Fresh: same-day / hours / minutes / "last 24h" phrasings.
+  if (/\b(today|just posted|just now|posted today|active today|new)\b/.test(s)) return 0;
+  if (/\b(hour|hours|minute|minutes|min|mins)\b|\bh\s*ago\b|last\s*24\s*h|24h\b/.test(s)) return 0;
+  if (/\byesterday\b/.test(s)) return 1;
+
+  const num = (m) => (/^an?$/.test(m) ? 1 : parseInt(m, 10));
+
+  // "30+ days ago" — the plus means at least N, so push just past the boundary.
+  let m = s.match(/(\d+)\s*\+\s*days?/);
+  if (m) return parseInt(m[1], 10) + 1;
+
+  m = s.match(/\b(\d+|an?)\s*years?\b/);
+  if (m) return num(m[1]) * 365;
+  m = s.match(/\b(\d+|an?)\s*months?\b/);
+  if (m) return num(m[1]) * 31; // a month is ≥30d → over the gate
+  m = s.match(/\b(\d+|an?)\s*weeks?\b/);
+  if (m) return num(m[1]) * 7;
+  m = s.match(/\b(\d+|an?)\s*days?\b/);
+  if (m) return num(m[1]);
+
+  // ISO date or parseable date string (LinkedIn datetime="…").
+  const iso = s.match(/\d{4}-\d{2}-\d{2}(t[\d:.+z-]*)?/);
+  const t = Date.parse(iso ? iso[0] : s);
+  if (!Number.isNaN(t)) {
+    const days = Math.floor((now.getTime() - t) / 86400000);
+    return days >= 0 ? days : null; // future/garbage date → unknown, keep
+  }
+  return null;
+}
+
+function isStale(posted) {
+  const age = postedAgeDays(posted);
+  return age !== null && age > MAX_AGE_DAYS;
+}
+
 /* A title has to read like a software engineering role before it earns a detail fetch.
    "staff engineer" on Indeed matches field consultants and billing analysts otherwise. */
 const TITLE_ACCEPT =
@@ -634,10 +683,24 @@ async function main() {
     return true;
   });
 
+  /* Drop stale postings (older than MAX_AGE_DAYS). Like clearance, they still go
+     to the ledger so we don't re-fetch, but never reach the scorer. Unknown/
+     unparseable dates are kept — we only drop when the age is positively old. */
+  const timely = cleared.filter((job) => {
+    if (isStale(job.posted)) {
+      if (boards[job.source]) {
+        boards[job.source].staleDropped = (boards[job.source].staleDropped || 0) + 1;
+      }
+      log(`drop (stale >${MAX_AGE_DAYS}d): ${job.title} @ ${job.company} [posted: ${job.posted}]`);
+      return false;
+    }
+    return true;
+  });
+
   /* The same role is often posted to two boards; keep whichever copy carries the
      fuller description so the scorer reads the best version available. */
   const best = new Map();
-  for (const job of cleared) {
+  for (const job of timely) {
     const key = dedupeKey(job);
     const prior = best.get(key);
     if (!prior || (job.description || "").length > (prior.description || "").length) {
@@ -664,5 +727,5 @@ if (require.main === module) {
   main();
 } else {
   /* Exported so the filters can be exercised without hitting the network. */
-  module.exports = { titlePlausible, needsClearance, relevance, shortlist, dedupeKey, clean, THEMES };
+  module.exports = { titlePlausible, needsClearance, postedAgeDays, isStale, MAX_AGE_DAYS, relevance, shortlist, dedupeKey, clean, THEMES };
 }
