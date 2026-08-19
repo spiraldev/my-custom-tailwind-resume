@@ -32,26 +32,30 @@ const versions = [
 /* ------------------------------------------------------------------ */
 const coldfusion = {
   slug: "coldfusion",
-  title: "Senior ColdFusion Engineer / Legacy Modernization Engineer",
-  headline: "Senior ColdFusion & Legacy Modernization Engineer",
+  title: "ColdFusion Contractor — Legacy Application Support & Maintenance",
+  headline: "ColdFusion / CFML Contractor — Legacy Application Support",
   summary:
-    "Software engineer since 1997 with deep ColdFusion (CFML) experience across healthcare, payments, events, and enterprise systems. I keep mission-critical monoliths running while incrementally modernizing them — extracting services, hardening SQL, and re-platforming ColdFusion workloads onto Node.js and AWS without disrupting the business. Comfortable owning production support, debugging, and refactoring on systems that have run for a decade or more.",
+    "Independent software engineer since 1997 with 8+ years of hands-on ColdFusion (CFML) work, available on a remote, as-needed contract basis. I specialize in maintaining legacy ColdFusion applications I did not originally build — tracing undocumented code, resolving reported defects, diagnosing authentication and role-based access issues, and reconstructing system and code-level documentation as I go. I work independently, coordinate directly with client technical staff, and run structured knowledge-transfer so the system is left better documented than I found it. Comfortable troubleshooting production SQL and relational schemas across ColdFusion, healthcare, payments, and enterprise systems.",
   skills: [
     {
-      group: "ColdFusion & Backend",
-      items: ["ColdFusion / CFML", "Node.js", "NestJS", "REST API development", "Legacy refactoring", "Production support & debugging"],
+      group: "ColdFusion & Legacy Support",
+      items: ["ColdFusion / CFML", "CFCs & Application.cfc", "Legacy application maintenance", "Defect diagnosis & bug-fixing", "Production support & debugging", "Enhancements & usability fixes"],
     },
     {
       group: "Databases",
-      items: ["SQL Server (MSSQL)", "MySQL", "PostgreSQL", "Query tuning & reporting", "Data workflows & migrations"],
+      items: ["SQL Server (MSSQL)", "MySQL", "PostgreSQL", "Relational schema troubleshooting", "Query tuning & reporting"],
     },
     {
-      group: "Modernization & Cloud",
-      items: ["Monolith-to-service migration", "ColdFusion → Node.js/AWS", "AWS Lambda", "AWS CDK", "API Gateway", "S3", "Serverless"],
+      group: "Tooling & Documentation",
+      items: ["SVN & Git", "Jira", "Code tracing & reconstruction", "Technical writing", "Support playbooks & user guides", "Knowledge transfer"],
     },
     {
       group: "Security & Domains",
-      items: ["Authentication & session security", "Payments & recurring billing", "Healthcare (HIPAA-aware)", "Reporting", "Events & membership systems"],
+      items: ["Authentication & role-based access", "Session security", "Payments & recurring billing", "Healthcare (HIPAA-aware)", "Events & membership systems"],
+    },
+    {
+      group: "Modernization (when needed)",
+      items: ["ColdFusion → Node.js/AWS", "Monolith-to-service migration", "AWS Lambda", "REST API development"],
     },
   ],
   experience: [
@@ -61,10 +65,10 @@ const coldfusion = {
       dates: "2006 – Present",
       location: "Remote",
       bullets: [
-        "Founded and run a bootstrapped SaaS platform, personally owning ColdFusion and Node.js codebases in production for 15+ years — from data model to deployment.",
-        "Migrated the platform from a ColdFusion monolith to AWS (infrastructure as code with CDK) — now a NestJS API, a public API, and a ReactJS UI — keeping paying customers live throughout.",
-        "Built and maintain payments, recurring billing, forms, and member portals backed by SQL Server / PostgreSQL, processing over $2M in transactions across 50 clients.",
-        "Provide ongoing production support and reliability engineering, sustaining 99.95% uptime for 100K+ users on long-lived code.",
+        "Operate independently as owner-operator, engaging 50 clients directly on a self-directed, as-needed basis — scoping work, coordinating with client technical staff, and delivering without oversight.",
+        "Personally own and maintain ColdFusion and Node.js codebases in production for 15+ years, providing ongoing production support, defect resolution, and reliability engineering that sustains 99.95% uptime for 100K+ users on long-lived code.",
+        "Maintain payments, recurring billing, forms, and member portals backed by SQL Server / PostgreSQL, troubleshooting relational schemas and processing over $2M in transactions.",
+        "Incrementally modernized the platform off a ColdFusion monolith to AWS (infrastructure as code with CDK) when the business called for it — keeping paying customers live throughout.",
       ],
     },
     {
@@ -73,9 +77,9 @@ const coldfusion = {
       dates: "2021 – Present",
       location: "Remote",
       bullets: [
-        "Modernized a ColdFusion student/registration platform, extracting business logic into Node.js and AWS Lambda services behind REST APIs.",
-        "Refactored and tuned MySQL queries and reporting, cutting response times roughly 65% on high-traffic pages.",
-        "Handled production support and bug triage on the ColdFusion monolith while incrementally shifting workloads off it.",
+        "Maintained a legacy ColdFusion student/registration platform I did not originally build — handling production support, bug triage, and defect resolution while tracing undocumented code to understand it.",
+        "Diagnosed and fixed issues across CFML and MySQL, tuning queries and reporting to cut response times roughly 65% on high-traffic pages.",
+        "Extracted business logic into Node.js and AWS Lambda services behind REST APIs where modernization was warranted, keeping the existing system running.",
       ],
     },
     {
@@ -107,9 +111,9 @@ const coldfusion = {
       dates: "2011 – 2013",
       location: "Sacramento, CA",
       bullets: [
-        "Maintained and extended ColdFusion/SQL enterprise medical-technology applications under regulated documentation standards.",
-        "Resolved production-support cases and modified existing software to correct defects and adapt to new interfaces.",
-        "Analyzed complex data models and technical documents to keep changes compliant and low-risk.",
+        "Maintained legacy ColdFusion/SQL enterprise medical applications under regulated documentation standards, resolving reported defects and adapting existing software to new interfaces.",
+        "Traced complex data models and reconstructed technical documentation to keep changes compliant, low-risk, and repeatable for the next engineer.",
+        "Worked defect and support cases end to end — root cause, fix, and written follow-up — coordinating with stakeholders on priorities.",
       ],
     },
     {
@@ -143,9 +147,9 @@ const coldfusion = {
     },
   ],
   highlights: [
-    "CPAP Data Management API — ColdFusion-era patient data workflows re-implemented as a secure Node.js/NestJS API with JWT auth, guards, and custom decorators.",
-    "Payment Processing API — secure recurring-payments and reporting service, migrating billing logic off a legacy stack onto AWS.",
-    "Repeated pattern across roles: strangle the ColdFusion monolith one service at a time, keeping SQL Server/MySQL data authoritative until cutover.",
+    "Recurring pattern across roles: pick up ColdFusion systems built by others, trace undocumented CFML, resolve the defect backlog, and rebuild the missing documentation.",
+    "Comfortable on as-needed, hourly engagements — variable weeks, self-directed, coordinating with client technical staff and running knowledge-transfer sessions.",
+    "Deep SQL troubleshooting against production relational schemas (SQL Server / MySQL / PostgreSQL) behind legacy ColdFusion apps.",
   ],
 };
 
