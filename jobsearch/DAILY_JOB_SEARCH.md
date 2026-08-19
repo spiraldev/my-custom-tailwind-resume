@@ -20,12 +20,13 @@ You are running the daily remote-job scan for Matt Graf.
   run, before scoring anything. One career history in three targeted versions —
   `coldfusion`, `full-stack`, `staff-engineer`. Never score from memory or from
   yesterday's run.
-- Slack DM target: `UJSQ7PGAC` (his own DM).
+- Slack target: channel `C0BS3963X24` (`#jmgdevteam` job-search channel).
 
 ## GOAL
 
-Score every job in `candidates.json`, and Slack-DM him the ones he is **80–100% fit**
-for — each with a ready-to-paste prompt for tailoring the résumé to that posting.
+Score every job in `candidates.json`, and post to Slack channel `C0BS3963X24` the ones he
+is **80–100% fit** for — each with a ready-to-paste prompt for tailoring the résumé to
+that posting.
 
 ## STEPS
 
@@ -38,8 +39,9 @@ for — each with a ready-to-paste prompt for tailoring the résumé to that pos
    including the ones below 80 with a one-line reason, so the rubric can be audited.
 7. Take the **top 5** by score (that day's cap) and add each as a row to the Notion
    tracker (see below).
-8. Send one Slack DM **per matched job** (those same top 5) to `UJSQ7PGAC` via the Slack MCP
-   (`slack_send_message`) — one message each, highest first, each linking its Notion row.
+8. Send one Slack message **per matched job** (those same top 5) to channel `C0BS3963X24`
+   via the Slack MCP (`slack_send_message`) — one message each, highest first, each linking
+   its Notion row.
    If Slack is unavailable, say so at the top of the report file and do not fail the run.
 
 The seen-jobs ledger (`jobsearch/state/seen.json`) is maintained by the fetcher. Do not
@@ -110,7 +112,7 @@ the report and keep going — don't fail the run.
 **Before sending:** if more than half the jobs you're reporting score 90+, or if more
 than about a fifth of the candidate pool cleared 80, re-score. You are being generous.
 
-## OUTPUT — Slack DM (one message per job)
+## OUTPUT — Slack channel (one message per job)
 
 Plain Slack markdown. No preamble, no commentary about the process, jobs only.
 Send a **separate `slack_send_message` per matched job**, highest score first, so each
